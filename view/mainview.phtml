@@ -1,0 +1,246 @@
+<?php
+// necesitamos la trayectoria de la URL para formar las rutas:
+global $URL_PATH;
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>
+        <?php \dawfony\Ti::startBlock("title"); ?>
+        Mercadito Plaza Turia
+        <?php \dawfony\Ti::endBlock(); ?>
+    </title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel=”shortcut icon” type=”image/ico” href=”img/favicon.ico”/>
+    
+    <!--Mis JS-->
+    <script src="<?= $URL_PATH ?>/js/comprar.js"></script>
+    <script src="<?= $URL_PATH ?>/js/cesta.js"></script>
+    <script src="<?= $URL_PATH ?>/js/incrementarCantidades.js"></script>
+    <script src="<?= $URL_PATH ?>/js/validar.js"></script>
+    <script src="<?= $URL_PATH ?>/js/validaTarjeta.js"></script>
+
+    <script>
+        var URL_PATH = "<?= $URL_PATH ?>"; // Pasamos el URL_PATH de php a Javascript.
+    </script>
+    <script>
+        var articulos = <?= $data ?>;
+    </script>
+    <style>
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+    <?php /* Bootstrap.CDN */ ?>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <?php /* Font awesome CDN */ ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <?php /* Animate.css CDN */ ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <?php \dawfony\Ti::startBlock("head"); ?>
+    <?php \dawfony\Ti::endBlock(); ?>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                            <div class="header__top__right__language">
+                                <img src="img/language.png" alt="">
+                                <div>Español</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">Español</a></li>
+                                    <li><a href="#">Inglés</a></li>
+                                </ul>
+                            </div>
+                            <div class="header__top__right__auth">
+                                <a href="login.html"><i class="fa fa-user"></i> Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="./index.html">Inicio</a></li>
+                            <li><a href="./shop-grid.html">Tienda</a></li>
+                            <li><a href="#">Paginas</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="./shop-details.html">Producto del Dia</a></li>
+                                    <li><a href="./shoping-cart.html">Cesta de la compra</a></li>
+                                    <li><a href="./checkout.html">Finalizar Compra</a></li>
+                                    <li><a href="./blog.html">Blog</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./contact.html">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">Cesta: <span>0.00€</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Todos los departamentos</span>
+                        </div>
+                        <ul>
+                            <li><a href="#">Carniceria</a></li>
+                            <li><a href="#">Polleria</a></li>
+                            <li><a href="#">Pescaderia</a></li>
+                            <li><a href="#">Producto Pre-Cocinado</a></li>
+                            <li><a href="#">Pan</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                <input type="text" placeholder="¿Qué necesitas hoy?">
+                                <button type="submit" class="site-btn">BUSCAR</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>916 05 99 47</h5>
+                                <span>Abiertos de 8:00 a 20:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+                        <div class="hero__text">
+                            <h2>Alimentos <br />100% Frescos</h2>
+                            <a href="#" class="primary-btn">PIDE AHORA</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <?php \dawfony\Ti::startBlock("content"); ?>
+    <?php \dawfony\Ti::endBlock(); ?>
+    <!-- Footer -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <ul>
+                            <li>Correo: Paseo de Extremadura 28936 Madrid</li>
+                            <li>Telefono: +65 11.188.888</li>
+                            <li>Email: yunermander@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Enlaces de Interés</h6>
+                        <ul>
+                            <li><a href="#">Ofertas</a></li>
+                            <li><a href="#">Listado de Productos</a></li>
+                            <li><a href="#">Formas de Pago</a></li>
+
+                        </ul>
+                        <ul>
+                            <li><a href="#">Tiendas</a></li>
+                            <li><a href="#">Sobre nosotros</a></li>
+                            <li><a href="#">Localizacion</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>¡Siguenos en nuestras redes!</h6>
+                        <div class="footer__widget__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>

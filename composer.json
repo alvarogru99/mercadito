@@ -1,0 +1,17 @@
+{
+    "name": "Alvaro/Mercadito",
+    "type": "project",
+    "require": {
+        "noahbuscher/macaw": "dev-master",
+        "victorjfg/dawfony": "dev-master",
+		"twbs/bootstrap": "dev-master"
+    },
+    "license": "copyright",
+    "authors": [
+        {
+            "name": "Alvaro",
+            "email": "alvaro@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
