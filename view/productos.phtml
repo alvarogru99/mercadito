@@ -1,0 +1,36 @@
+  
+<?php
+global $URL_PATH;
+\dawfony\Ti::extend("view/mainview.phtml");
+\dawfony\Ti::startBlock("content");
+?>
+
+
+<!-- Paginacion -->
+<!-- Hay algo que no hace bien la paginacion, se queda la ruta fija y añade la ruta de paginacion otra vez -->
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item <?= ($pagina  <= 1 ? "disabled" : "") ?>">
+      <a class="page-link" href="<?= $ruta . ($pagina - 1) ?>" tabindex="-1" aria-disabled="true">Anterior</a>
+    </li>
+    <?php
+    for ($i = 1; $i <= $numpaginas; $i++) {
+    ?>
+
+      <li class="page-item ">
+        <a class="page-link" href="<?= $ruta ?><?= $i ?>"><?= $i ?></a>
+      </li>
+
+    <?php
+    }
+    ?>
+    <li class="page-item <?= ($pagina + 1 > $numpaginas ? "disabled" : "") ?>">
+      <a class="page-link" href="<?= $ruta . ($pagina + 1) ?>" aria-disabled="true">Siguiente</a>
+    </li>
+  </ul>
+</nav>
+
+<?php
+\dawfony\Ti::endBlock();
+\dawfony\Ti::endExtend();
+?>
