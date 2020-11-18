@@ -27,7 +27,7 @@ class UserController extends Controller
         // $totalArticulos = (new Orm)->sumaTotalArticulos(session_id());
         // $data = $articulosCesta->total;
         // $sumaTotal =$totalArticulos->suma;
-        echo Ti::render("view/formLogin.phtml", compact("title", "usuario","data", "sumaTotal","error_msg", "login","tarjeta","cvv"));
+        echo Ti::render("view/Login.phtml", compact("title", "usuario","data", "sumaTotal","error_msg", "login","tarjeta","cvv"));
 
     }
 
@@ -59,7 +59,7 @@ class UserController extends Controller
             sleep(3);
             $cod_comercio = 2222;
             $cod_pedido = $id_pedido["id"];
-            $concepto = "Sketchi Snowboard";
+            $concepto = "Mercadito Plaza Turia";
             header("Location: http://localhost/pasarela/index.php?cod_comercio=$cod_comercio&cod_pedido=$cod_pedido&importe=$sumaTotal&concepto=$concepto");
         
     }
