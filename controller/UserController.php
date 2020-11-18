@@ -19,14 +19,14 @@ class UserController extends Controller
         $usuario->password = "";
         $usuario->direccion = "";
         $usuario->email = "";
-        $tarjeta =  "";
-        $cvv = "";
+        // $tarjeta =  "";
+        // $cvv = "";
         $error_msg = "";
         $login = "";
-        $articulosCesta = (new Orm)->articulosEnCesta(session_id());
-        $totalArticulos = (new Orm)->sumaTotalArticulos(session_id());
-        $data = $articulosCesta->total;
-        $sumaTotal =$totalArticulos->suma;
+        // $articulosCesta = (new Orm)->articulosEnCesta(session_id());
+        // $totalArticulos = (new Orm)->sumaTotalArticulos(session_id());
+        // $data = $articulosCesta->total;
+        // $sumaTotal =$totalArticulos->suma;
         echo Ti::render("view/formLogin.phtml", compact("title", "usuario","data", "sumaTotal","error_msg", "login","tarjeta","cvv"));
 
     }
@@ -82,14 +82,11 @@ class UserController extends Controller
      }
      public function formularioRegistro()
     {
-        echo \dawfony\Ti::render("view/formregistro.phtml");
+        echo \dawfony\Ti::render("view/registro.phtml");
     }
 
     public function procesarRegistro()
     {
-        // TO DO: Faltan comprobaciones, de seguridad
-
-        // hacer la grabación
         $user = new Usuario();
         $user->login = sanitizar(strtolower($_REQUEST["login"]));
         $user->password = password_hash($_REQUEST["password"], PASSWORD_DEFAULT);
@@ -104,7 +101,7 @@ class UserController extends Controller
 
     public function formularioLogin()
     {
-        echo \dawfony\Ti::render("view/formlogin.phtml");
+        echo \dawfony\Ti::render("view/login.phtml");
     }
 
     public function procesarLogin()
