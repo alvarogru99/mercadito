@@ -4,6 +4,138 @@ global $URL_PATH;
 \dawfony\Ti::extend("view/mainview.phtml");
 \dawfony\Ti::startBlock("content");
 ?>
+<!-- Filtrado de productos -->
+<section class="featured spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Productos en Oferta</h2>
+                    </div>
+                    <div class="featured__controls">
+                        <ul>
+                            <li class="active" data-filter="*">Todos</li>
+                            <li data-filter=".pollo">Pollería</li>
+                            <li data-filter=".carne">Carnicería</li>
+                            <li data-filter=".embutidos">Embutidos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row featured__filter">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix  pollo">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/alitas-pollo.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Alitas de Pollo</a></h6>
+                            <h5>3.59€/kg</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/conejo-tierno.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Conejo Tierno</a></h6>
+                            <h5>4.99€/kg</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix carne">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/carne-picada.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Carne Picada</a></h6>
+                            <h5>4.99€/kg</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix  embutidos">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/lomo-iberico.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Lomo Iberico "Roal"</a></h6>
+                            <h5>27.99€</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix pollo">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/pechugas-pollo.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Pechugas de Pollo</a></h6>
+                            <h5>4.39€/kg</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix  carne">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/chuleton-avila.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Chuletón de Avila</a></h6>
+                            <h5>9.99€</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix  embutidos">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/jamon-roal.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Jamon Iberico "Roal"</a></h6>
+                            <h5>99.00€</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix carne">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/higaditos.png">
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Higaditos</a></h6>
+                            <h5>1.98€/kg</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Fin filtrado de productos -->
+
+<!-- Carrusel productos -->
+
+  <section class="latest-product spad" >
+    <div class="container" id="lista-productos">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="latest-product__text">
+            <h4>Ultimos Productos</h4>
+            <div class="latest-product__slider owl-carousel">
+              <div class="latest-prdouct__slider__item">
+                <?php $cuenta = 0;
+                foreach ($productos as $producto) : ?>
+                <a href="#" class="latest-product__item">
+                  <div class="latest-product__item__pic">
+                    <img src="img/latest-product/<?= $producto->img ?>" alt="">
+                  </div>
+                  <div class="latest-product__item__text">
+                    <h6><?= $producto->nombre ?></h6>
+                    <span><?= $producto->precio ?>€</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </section>
 
 
 <!-- Paginacion -->
